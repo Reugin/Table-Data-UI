@@ -4,7 +4,7 @@ import Dashboard from './assets/Dashboard/dashboard';
 
 function App() {
   return (
-    <Dashboard/>
+    <Login/>
   );
 }
 

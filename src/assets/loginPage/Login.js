@@ -1,58 +1,68 @@
+import { useState, useEffect } from "react";
 import "./login.css";
 
 function Login() {
-  const signupTogleHandler = () => {
-    const wrapper = document.querySelector(".wrapper"),
-      loginHeader = document.querySelector(".login header");
-    wrapper.classList.remove("active");
-  };
-
-  const loginTogleHandler = () => {
-    const wrapper = document.querySelector(".wrapper"),
-      signupLink = document.querySelector(".signup-link"),
-      signupHeader = document.querySelector(".signup header");
-    wrapper.classList.add("active");
-  };
-
-  const showPassword = () => {
-    const passwordCheck = document.querySelector(".checkbox"),
-      password = document.querySelector(".password");
-    if (password.type === "password") {
-      password.type = "text";
-    } else {
-      password.type = "password";
-    }
-  };
+  const [action, setAction] = useState(" ");
+  const [checked, setChecked] = useState("not-checked");
 
   return (
-    <div className="wrapper">
+    <div
+      className={action === "active-login" ? "wrapper active-login" : "wrapper"}
+    >
       <div className="form signup" id="signup">
-        <header onClick={signupTogleHandler}>Signup</header>
+        <header
+          onClick={() => {
+            setAction(" ");
+          }}
+        >
+          Signup
+        </header>
         <form action="#">
-          <input type="text" placeholder="Full Name" required />
-          <input type="email" placeholder="Email Address" required />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Confirm Password" required />
+          <div className="name-input">
+            <input type="text" placeholder="Full Name" required />
+            <span class="material-symbols-outlined">person</span>
+          </div>
+          <div className="email-input">
+            <input type="email" placeholder="Email Address" required />
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+
+          <div className="password-input">
+            <input type="password" placeholder="Password" />
+            <span class="material-symbols-outlined">visibility</span>
+          </div>
+          <div className="password-input">
+            <input type="password" placeholder="Confirm Password" />
+            <span class="material-symbols-outlined">visibility</span>
+          </div>
           <input type="submit" value="Signup" />
         </form>
       </div>
 
       <div className="form login">
-        <header onClick={loginTogleHandler}>Login</header>
+        <header
+          onClick={() => {
+            setAction("active-login");
+          }}
+        >
+          Login
+        </header>
         <form action="#">
-          <input type="email" placeholder="Email Address" required />
-          <input
-            type="password"
-            placeholder="password"
-            className="password"
-            required
-          />
-          <div className="checkbox">
-            <input type="checkbox" id="passwordCheck" onClick={showPassword} />
-            <label htmlFor="checkbox">Show Password</label>
+        <div className="email-input">
+            <input type="email" placeholder="Email Address" required />
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <div className="password-input">
+            <input type="password" placeholder="Password" />
+            <span class="material-symbols-outlined">visibility</span>
           </div>
           <input type="submit" value="Login" />
-          <span className="signup-link" onClick={signupTogleHandler}>
+          <span
+            className="signup-link"
+            onClick={() => {
+              setAction("active-login");
+            }}
+          >
             Don't Have an account? <a href="#">Signup</a>
           </span>
         </form>
