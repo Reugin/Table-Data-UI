@@ -15,7 +15,7 @@ import AlertDialog from "../../alerts/AlertDialog";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: "gray",
     color: theme.palette.common.white,
   },
   [`&.${tableCellClasses.body}`]: {
@@ -82,7 +82,7 @@ function ReportTable() {
   return (
     <>
     <FileUpload callback = {callbackFunc} />
-    <TableContainer component={Paper} sx={{ minWidth: 750, maxHeight: "80vh"}}>
+    <TableContainer component={Paper} sx={{ minWidth: 930, maxHeight: "80vh"}}>
       <Table aria-label="customized table">
         <TableHead>
           <TableRow>
