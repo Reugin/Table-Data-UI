@@ -133,6 +133,7 @@ form .checkbox label {
 
 form span a {
   text-decoration: none;
+  color: blue;
 }
 
 form span a:hover {
