@@ -41,7 +41,7 @@ function FileUpload({ callback }) {
   return (
     <div className="file-upload-container">
       <input type="file" accept=".csv, .json, .xls" onChange={handleFileChange} />
-      <button onClick={handleFileUpload} style={{ backgroundColor: "gray", marginLeft: "10px" }}>Upload</button>
+      <button onClick={handleFileUpload} style={{ marginLeft: "10px" }}>Upload</button>
 
       <AlertDialog open={alertOpen} message={alertMessage} onClose={closeAlert} />
     </div>
