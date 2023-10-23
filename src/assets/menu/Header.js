@@ -17,7 +17,7 @@ export default function Header() {
     return <Navigate to="/" />;
   }
   return ( 
-      <AppBar position="static" style={{backgroundColor:"blueviolet"}}> 
+      <AppBar position="static" style={{backgroundColor:"blueviolet", position:"sticky", top:0}}> 
         <Toolbar> 
           <Typography variant="h6" 
             component="div" sx={{ flexGrow: 1 }}> 

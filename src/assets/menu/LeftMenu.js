@@ -15,7 +15,7 @@ const LeftMenu = () => {
   };
 
   return (
-    <Sidebar style={{ height: "110vh", backgroundColor: "blueviolet" }}>
+    <Sidebar style={{ height: "110vh", backgroundColor: "blueviolet"  }}>
       <Menu>
         <MenuItem
           icon={<MenuOutlinedIcon />}
