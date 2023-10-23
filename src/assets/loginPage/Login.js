@@ -6,7 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [action, setAction] = useState(" ");
-  const [checked, setChecked] = useState("not-checked");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword2, setShowPassword2] = useState(false);
+  const [showPassword3, setShowPassword3] = useState(false);
 
   const [name, setName] = useState(""); 
   const [email, setEmail] = useState("");
@@ -19,6 +21,15 @@ function Login() {
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMessage, setAlertMessage] = useState('');
 
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
+  const toggleShowPassword2 = () => {
+    setShowPassword2(!showPassword2);
+  };
+  const toggleShowPassword3 = () => {
+    setShowPassword3(!showPassword3);
+  };
   const closeAlert = () => {
     setAlertOpen(false);
   }
@@ -119,21 +130,21 @@ function Login() {
           </div>
           <div className="password-input">
             <input
-              type="password"
+              type={showPassword===true ? "text" : "password"}
               placeholder="Password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => (setPassword(e.target.value))}
             />
-            <span className="material-symbols-outlined">visibility</span>
+            <span className="material-symbols-outlined" style={{cursor:'pointer'}} onClick={toggleShowPassword}>{showPassword===false ? "visibility" :"visibility_off"}</span>
           </div>
           <div className="password-input">
             <input
-              type="password"
+              type={showPassword2===true ? "text" : "password"}
               placeholder="Confirm Password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
-            <span className="material-symbols-outlined">visibility</span>
+            <span className="material-symbols-outlined" style={{cursor:'pointer'}} onClick={toggleShowPassword2}>{showPassword2===false ? "visibility" :"visibility_off"}</span>
           </div>
           <input type="submit" value="Signup" onClick={handleRegister} />
         </form>
@@ -156,12 +167,12 @@ function Login() {
           </div>
           <div className="password-input">
             <input
-              type="password"
+              type={showPassword3===true ? "text" : "password"}
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <span className="material-symbols-outlined">visibility</span>
+            <span className="material-symbols-outlined" style={{cursor:'pointer'}} onClick={toggleShowPassword3}>{showPassword3===false ? "visibility" :"visibility_off"}</span>
           </div>
           <input type="submit" value="Login" onClick={handleSignIn} />
           <span
