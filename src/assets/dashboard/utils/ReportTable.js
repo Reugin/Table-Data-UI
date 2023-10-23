@@ -82,7 +82,7 @@ function ReportTable() {
   return (
     <>
     <FileUpload callback = {callbackFunc} />
-    <TableContainer component={Paper} sx={{ minWidth: 960, maxHeight: "80vh"}}>
+    <TableContainer component={Paper} sx={{ minWidth: 980, maxHeight: "80vh"}}>
       <Table aria-label="customized table">
         <TableHead>
           <TableRow>
